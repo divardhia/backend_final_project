@@ -22,6 +22,20 @@ export const getUserById = async (req, res) => {
     }
 }
 
+export const login = async (req, res) => {
+    try {
+        const user = await User.findAll({
+            where: {
+                email: req.params.email,
+                password: req.params.password
+            }
+        });
+        res.json(user[0]);
+    } catch (error) {
+        res.json({ message: error.message });
+    }
+}
+
 export const createUser = async (req, res) => {
     try {
         await User.create(req.body);
