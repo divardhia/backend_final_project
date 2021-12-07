@@ -1,0 +1,28 @@
+GET http://localhost:4000/
+
+###
+
+GET http://localhost:4000/1
+
+###
+POST http://localhost:4000/
+Content-Type: application/json
+
+{
+    "nama": "sela auia",
+    "email": "sela@email.com",
+    "password": "1234567890"
+}
+
+###
+PATCH  http://localhost:4000/2
+Content-Type: application/json
+
+{
+    "nama": "sela aulia",
+    "email": "sela@email.com",
+    "password": "1234567890"
+}
+
+###
+DELETE http://localhost:4000/2
