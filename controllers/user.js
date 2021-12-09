@@ -23,14 +23,23 @@ export const getUserById = async (req, res) => {
 }
 
 export const login = async (req, res) => {
+    const email = req.body.email;
+    const password = req.body.password;
     try {
-        const user = await User.findAll({
+        const user = await User.findOne({
             where: {
-                email: req.params.email,
-                password: req.params.password
+                email: email,
+                password: password
             }
         });
-        res.json(user[0]);
+        if (user) {
+            return res.json(user);
+        } else {
+            return res.status(404).send([{
+                success: false,
+                message: 'Item not found!'
+            }])
+        }
     } catch (error) {
         res.json({ message: error.message });
     }
