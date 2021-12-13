@@ -6,7 +6,13 @@ GET http://localhost:4000/1
 
 ###
 
-GET http://localhost:4000/divardhia@gmail.com/1234567890
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "email": "divardhia@gmail.com",
+    "password": "1234567890"
+}
 
 ###
 POST http://localhost:4000/
