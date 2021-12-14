@@ -35,7 +35,7 @@ export const login = async (req, res) => {
         if (user) {
             return res.json(user);
         } else {
-            return res.status(404).send([{
+            return res.json([{
                 success: false,
                 message: 'Item not found!'
             }])
