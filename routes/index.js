@@ -5,6 +5,7 @@ import { createVocab, deleteVocab, getAllVocab, getVocabById, getVocabByKategori
 
 const router = express.Router();
 
+//Route User
 router.get('/', getAllUser);
 router.get('/:id', getUserById);
 router.post('/login', login);
@@ -12,7 +13,7 @@ router.post('/', createUser);
 router.patch('/:id', updateUser);
 router.delete('/:id', deleteUser);
 
-
+// Route Vocabulari
 router.get('/vocab', getAllVocab);
 router.get('/vocab/:id', getVocabById);
 router.get('/vocab/:kategori', getVocabByKategori);
