@@ -22,6 +22,20 @@ export const getVocabById = async (req, res) => {
     }
 }
 
+export const getVocabByKategori = async (req, res) => {
+    try {
+        const vocab = await Vocab.findAll({
+            where: {
+                kategori: req.params.kategori
+            }
+        });
+        res.json(vocab[0]);
+    } catch (error) {
+        res.json({ message: error.message });
+    }
+}
+
+
 export const createVocab = async (req, res) => {
     try {
         await Vocab.create(req.body);
