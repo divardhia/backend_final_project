@@ -2,10 +2,10 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jan 2022 pada 02.10
--- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.14
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jan 03, 2022 at 08:47 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -37,7 +37,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `nama`, `email`, `password`, `createdAt`, `updatedAt`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `user` (`id`, `nama`, `email`, `password`, `createdAt`, `updatedAt`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `vocab`
+-- Table structure for table `vocab`
 --
 
 CREATE TABLE `vocab` (
@@ -54,53 +54,55 @@ CREATE TABLE `vocab` (
   `gambar` varchar(255) NOT NULL,
   `bindo` varchar(255) NOT NULL,
   `bing` varchar(255) NOT NULL,
-  `kategori` varchar(255) NOT NULL
+  `kategori` varchar(255) NOT NULL,
+  `createdAt` date NOT NULL,
+  `updatedAt` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `vocab`
+-- Dumping data for table `vocab`
 --
 
-INSERT INTO `vocab` (`id`, `gambar`, `bindo`, `bing`, `kategori`) VALUES
-(1, 'anjinglaut', 'Anjing Laut', 'Seals', 'Animal'),
-(2, 'anjing', 'Anjing', 'Dog', 'Animal'),
-(3, 'buaya', 'Buaya', 'Crocodile', 'Animal'),
-(4, 'burunghantu', 'Burung Hantu', 'Owl', 'Animal'),
-(5, 'gajah', 'Gajah', 'Elephant', 'Animal'),
-(6, 'gurita', 'Gurita', 'Octopus', 'Animal'),
-(7, 'harimau', 'Harimau', 'Tiger', 'Animal'),
-(8, 'kucing', 'Kucing', 'Cat', 'Animal'),
-(9, 'monyet', 'Monyet', 'Monkey', 'Animal'),
-(10, 'panda', 'Panda', 'Panda', 'Animal');
+INSERT INTO `vocab` (`id`, `gambar`, `bindo`, `bing`, `kategori`, `createdAt`, `updatedAt`) VALUES
+(1, 'anjinglaut', 'Anjing Laut', 'Seals', 'Animal', '2022-01-03', '2022-01-03'),
+(2, 'anjing', 'Anjing', 'Dog', 'Animal', '2022-01-03', '2022-01-03'),
+(3, 'buaya', 'Buaya', 'Crocodile', 'Animal', '2022-01-03', '2022-01-03'),
+(4, 'burunghantu', 'Burung Hantu', 'Owl', 'Animal', '2022-01-03', '2022-01-03'),
+(5, 'gajah', 'Gajah', 'Elephant', 'Animal', '2022-01-03', '2022-01-03'),
+(6, 'gurita', 'Gurita', 'Octopus', 'Animal', '2022-01-03', '2022-01-03'),
+(7, 'harimau', 'Harimau', 'Tiger', 'Animal', '2022-01-03', '2022-01-03'),
+(8, 'kucing', 'Kucing', 'Cat', 'Animal', '2022-01-03', '2022-01-03'),
+(9, 'monyet', 'Monyet', 'Monkey', 'Animal', '2022-01-03', '2022-01-03'),
+(10, 'panda', 'Panda', 'Panda', 'Animal', '2022-01-03', '2022-01-03');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `vocab`
+-- Indexes for table `vocab`
 --
 ALTER TABLE `vocab`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `vocab`
+-- AUTO_INCREMENT for table `vocab`
 --
 ALTER TABLE `vocab`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
